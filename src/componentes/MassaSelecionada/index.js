@@ -4,7 +4,7 @@ import { Massa, Img, Name } from './styles';
 
 export default function MassaSelecionada() {
   const { massaSelecionada } = useContext(PizzaContext);
-
+  // Se houver uma massa selecionada, exibe suas informações
   return (
     (massaSelecionada.id >= 0) ?
       (

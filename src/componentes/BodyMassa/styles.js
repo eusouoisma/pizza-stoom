@@ -7,7 +7,7 @@ export const BodyStyle = styled.div`
 export const Welcome = styled.p`
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
-    font-weigth: 500;
+    font-weight: 500;
     color: #ffffff;
 
     span {

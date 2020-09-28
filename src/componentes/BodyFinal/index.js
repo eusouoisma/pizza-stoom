@@ -6,17 +6,19 @@ import { PizzaContext } from '../../contexts/Pizza';
 
 
 export default function BodyFinal() {
-
-    const { pizzaConfirmada, resetar, mensagemFinal } = useContext(PizzaContext);
-    
+    //Função que limpa todas as seleções
+    const { resetar, mensagemFinal } = useContext(PizzaContext);
+    //State utilizada para redirecionar para a rota inicial após o reset
     const [redirecionar, setRedirecionar] = useState(false);
 
+    //Limpa as seleções e redireciona para a rota inicial
     function reiniciar(){
         resetar();
         setRedirecionar(true);
     }
 
     return (
+        // Caso tenha reiniciado, redireciona
         redirecionar ?
             <Redirect to="/" />
             :

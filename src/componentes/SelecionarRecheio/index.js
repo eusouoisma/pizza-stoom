@@ -7,14 +7,17 @@ export default function SelecionarRecheio() {
 
     return (
         <Main className="row">
+
             {
                 listaRecheios.map((item) => {
                     return (
                         <div className="col-12 col-md-4" key={item.id}>
+                            {/* Exibe a imagem da pizza e o nome do recheio */}
                             <Pizza>
                                 <Img style={{ backgroundImage: "url(" + item.img + ")" }}></Img>
                                 <Name>{item.nome}</Name>
                             </Pizza>
+                            {/* Botão para selecionar o recheio */}
                             <Button onClick={() => salvarRecheioSelecionado(item)}
                                 style={{ backgroundColor: (recheioSelecionado.id === item.id) ? '#750901' : '' }}>
                                 {
@@ -25,7 +28,6 @@ export default function SelecionarRecheio() {
                     );
                 })
             }
-
 
         </Main>
     );

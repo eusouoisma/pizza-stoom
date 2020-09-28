@@ -19,30 +19,34 @@ export default function BodyMassa() {
         <BodyStyle>
             <div className="container">
                 <Title>Sua Pizza</Title>
+                {/* Exibe o recheio, o tamanho e a massa que já foram selecionados */}
                 <div className="row">
                     <RecheioSelecionado />
                     <TamanhoSelecionado />
-                    <MassaSelecionada/>
+                    <MassaSelecionada />
                 </div>
                 <Instruction>3º passo: escolha a massa da sua pizza:</Instruction>
+                {/* Componente que exibe as opções de massa */}
                 <SelecionarMassa />
+                {/* Botão para voltar para a página de tamanho */}
                 <Link to="/tamanho">
                     <PrevButton>
                         <img src={Prev} alt="Prev Button" />
                         ESCOLHER TAMANHO
                     </PrevButton>
                 </Link>
+                {/* Botão de "Avançar". Só fica ativo caso haja uma massa selecionado */}
                 {massaSelecionada.id >= 0 ?
                     <Link to="/confirmar">
                         <NextButtonActive>
                             FINALIZAR
-                            <img src={Next} alt="Next Button"/>
+                            <img src={Next} alt="Next Button" />
                         </NextButtonActive>
                     </Link>
                     :
                     <NextButtonDisabled>
                         FINALIZAR
-                        <img src={Next} alt="Next Button"/>
+                        <img src={Next} alt="Next Button" />
                     </NextButtonDisabled>
                 }
 

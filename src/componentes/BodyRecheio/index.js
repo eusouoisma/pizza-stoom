@@ -18,9 +18,15 @@ export default function BodyRecheio() {
                 <Welcome>
                     Bem vindo(a)! <span> Vamos escolher sua pizza de hoje?</span>
                 </Welcome>
+
+                {/* Componente que exibe a informação de recomendação */}
                 <Recomendação />
                 <Instruction>1º passo: escolha o recheio da sua pizza:</Instruction>
+                
+                {/* Componente que exibe as opções de recheio */}
                 <SelecionarRecheio />
+                
+                {/* Botão de "Avançar". Só fica ativo caso haja um recheio selecionado */}
                 {recheioSelecionado.id >= 0 ?
                     <Link to="/tamanho">
                         <NextButtonActive>

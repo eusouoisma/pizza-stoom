@@ -6,6 +6,7 @@ export default function Confirmacao() {
  return (
    <div>
        <Header/>
+       {/* Componente contendo todo o corpo da página em que o usuário confirma a escolha da pizza */}
        <BodyConfirmacao/>
    </div>
  );

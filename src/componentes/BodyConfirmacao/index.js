@@ -37,7 +37,7 @@ export default function BodyConfirmacao() {
                     <Link to="/massa">
                     <PrevButton>
                         <img src={Prev} alt="Prev Button" />
-                        ESCOLHER TAMANHO
+                        ESCOLHER MASSA
                     </PrevButton>
                 </Link>
                 </div>

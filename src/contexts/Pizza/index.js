@@ -4,35 +4,44 @@ export const PizzaContext = createContext();
 
 const PizzaProvider = ({children}) => {
 
+    // Listas contendo as informações para a escolha das pizzas, que serão recebidas por back-end
     const [listaRecheios, setListaRecheios] = useState([]);
     const [listaTamanhos, setListaTamanhos] = useState([]);
     const [listaMassas, setListaMassas] = useState([]);
 
+    //Id do recheio de pizza que está sendo recomendado no dia
     const [recomendacao, setRecomendacao] = useState({});
     
+    // Escolhas de recheio, tamanho e massa feitas pelo usuário
     const [recheioSelecionado, setRecheioSelecionado] = useState({});
     const [tamanhoSelecionado, setTamanhoSelecionado] = useState({});
     const [massaSelecionada, setMassaSelecionada] = useState({});
     
+    // Informações finais da pizza, após confirmação
     const [pizzaConfirmada, setPizzaConfirmada] = useState({});
+
+    // Mensagem a ser exibida para o usuário na última página
     const [mensagemFinal, setMensagemFinal] = useState('');
 
-    
+    // Salva as informações do recheio selecionado, tanto em state quando em localStorage
     const salvarRecheioSelecionado = (item) => {
         setRecheioSelecionado(item);
         localStorage.setItem('@stoom-pizza/recheio', JSON.stringify(item));
     }
 
+    // Salva as informações do tamanho selecionado, tanto em state quando em localStorage
     const salvarTamanhoSelecionado = (item) => {
         setTamanhoSelecionado(item);
         localStorage.setItem('@stoom-pizza/tamanho', JSON.stringify(item));
     }
 
+    // Salva as informações da massa selecionada, tanto em state quando em localStorage
     const salvarMassaSelecionada = (item) => {
         setMassaSelecionada(item);
         localStorage.setItem('@stoom-pizza/massa', JSON.stringify(item));
     }
     
+    // Confirma as escolhas do usuário
     const confirmarPizza = () => {
         let pizza = {
             recheio: recheioSelecionado.nome,
@@ -40,6 +49,8 @@ const PizzaProvider = ({children}) => {
             massa: massaSelecionada.nome
         }
         setPizzaConfirmada(pizza);
+        
+        //Mensagem de sucesso contendo as informações escolhidas
         let mensagem; 
         mensagem = ("O seu pedido foi confirmado! Uma pizza com recheio " + pizza.recheio + 
                     ", Tamanho " + pizza.tamanho + 
@@ -52,6 +63,7 @@ const PizzaProvider = ({children}) => {
         localStorage.setItem('@stoom-pizza/mensagemFinal', mensagem);
     }
     
+    //Remove todas as seleções
     const resetar = () => {
         localStorage.clear();
         setRecheioSelecionado({});

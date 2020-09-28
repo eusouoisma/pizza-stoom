@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -7,8 +7,10 @@ import Tamanho from './pages/Tamanho';
 import Massa from './pages/Massa';
 import Confirmação from './pages/Confirmação';
 import Final from './pages/Final';
+import { PizzaContext } from './contexts/Pizza';
 
 const Routes = () => {
+
     return (
         <BrowserRouter>
             <Switch>

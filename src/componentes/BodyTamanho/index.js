@@ -17,6 +17,7 @@ export default function Tamanho() {
         <BodyStyle>
             <div className="container">
                 <Title>Sua Pizza</Title>
+                {/* Exibe o recheio e o tamanho que já foram selecionados */}
                 <div className="row">
                     <RecheioSelecionado />
                     <TamanhoSelecionado />
@@ -24,13 +25,16 @@ export default function Tamanho() {
                 <Instruction>
                     2º passo: escolha o tamanho da sua pizza
                 </Instruction>
+                {/* Componente que exibe as opções de tamanho */}
                 <SelecionarTamanho />
+                {/* Botão para voltar para a página de recheio */}
                 <Link to="/">
                     <PrevButton>
                         <img src={Prev} alt="Prev Button" />
                         ESCOLHER RECHEIO
                     </PrevButton>
                 </Link>
+                {/* Botão para avançar para a página da massa. Caso não tenha selecionado o tamanho, o botão fica bloqueado */}
                 {tamanhoSelecionado.id >= 0 ?
                     <Link to="/massa">
                         <NextButtonActive>

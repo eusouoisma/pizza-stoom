@@ -6,6 +6,7 @@ export default function Massa() {
  return (
    <div>
        <Header/>
+       {/* Componente contendo todo o corpo da página de selecionar massa */}
        <BodyMassa/>
    </div>
  );

@@ -4,7 +4,7 @@ import { Tamanho, Img, Name } from './styles';
 
 export default function TamanhoSelecionado() {
   const { tamanhoSelecionado } = useContext(PizzaContext);
-
+  // Se houver um tamanho selecionado, exibe suas informações
   return (
     (tamanhoSelecionado.id >= 0) ?
       (

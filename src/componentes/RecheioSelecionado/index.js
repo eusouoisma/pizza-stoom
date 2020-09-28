@@ -5,14 +5,17 @@ import { Pizza, Img, Name } from './styles';
 export default function RecheioSelecionado() {
   const { recheioSelecionado } = useContext(PizzaContext);
   console.log(recheioSelecionado.id);
+
+  // Se houver um recheio selecionado, exibe suas informações
   return (
     (recheioSelecionado.id >= 0) ?
-      (<div className="col-12 col-md-4" >
-          <Pizza>
-            <Img style={{ backgroundImage: "url(" + recheioSelecionado.img + ")" }}></Img>
-            <Name>{recheioSelecionado.nome}</Name>
-          </Pizza>
-        </div>
-        ) : (<div></div>)
+      <div className="col-12 col-md-4" >
+        <Pizza>
+          <Img style={{ backgroundImage: "url(" + recheioSelecionado.img + ")" }}></Img>
+          <Name>{recheioSelecionado.nome}</Name>
+        </Pizza>
+      </div>
+      :
+      <div></div>
   );
 }

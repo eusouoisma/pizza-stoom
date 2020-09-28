@@ -11,10 +11,12 @@ export default function SelecionarRecheio() {
                 listaMassas.map((item) => {
                     return (
                         <div className="col-12 col-md-4" key={item.id}>
+                            {/* Exibe a imagem da massa e o nome do tipo de massa (Ex: fina, tradicional) */}
                             <Massa>
                                 <Img style={{ backgroundImage: "url(" + item.img + ")" }}></Img>
                                 <Name>{item.nome}</Name>
                             </Massa>
+                            {/* Botão para selecionar a massa */}
                             <Button onClick={() => salvarMassaSelecionada(item)}
                                 style={{ backgroundColor: (massaSelecionada.id === item.id) ? '#750901' : '' }}>
                                 {

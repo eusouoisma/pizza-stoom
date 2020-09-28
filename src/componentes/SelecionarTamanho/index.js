@@ -11,10 +11,12 @@ export default function SelecionarTamanho() {
                 listaTamanhos.map((item) => {
                     return (
                         <div className="col-12 col-md-4" key={item.id}>
+                            {/* Exibe a imagem do tamanho da pizza e o nome do tamanho (Ex: Pequeno, Grande) */}
                             <Tamanho>
                                 <Img style={{ backgroundImage: "url(" + item.img + ")" }}></Img>
                                 <Name>{item.nome}</Name>
                             </Tamanho>
+                            {/* Botão para selecionar o tamanho */}
                             <Button onClick={() => salvarTamanhoSelecionado(item)}
                                 style={{ backgroundColor: (tamanhoSelecionado.id === item.id) ? '#750901' : '' }}>
                                 {
